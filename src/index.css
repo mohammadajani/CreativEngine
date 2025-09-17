@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-text font-sans;
+}
+
+/* Custom scrollbar for a sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #262626;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9E7FFF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c5eff;
+}
+
+/* Global button styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-full
+         bg-primary text-white transition-all duration-300 ease-in-out
+         hover:bg-secondary hover:shadow-glow-md focus:outline-none focus:ring-4 focus:ring-primary/50;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-full
+         bg-surface text-primary border border-primary transition-all duration-300 ease-in-out
+         hover:bg-primary hover:text-white hover:shadow-glow-md focus:outline-none focus:ring-4 focus:ring-primary/50;
+}
+
+/* Section padding */
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8;
+}
+
+/* Card styles */
+.card {
+  @apply bg-surface rounded-2xl p-6 md:p-8 shadow-lg border border-border transition-all duration-300 ease-in-out;
+}
+
+/* Hover effects for cards */
+.card-hover:hover {
+  @apply transform -translate-y-2 scale-[1.02] shadow-glow-sm border-primary;
+}
+
+/* Scroll reveal animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
