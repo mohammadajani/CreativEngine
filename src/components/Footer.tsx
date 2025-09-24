@@ -1,14 +1,36 @@
 import React from 'react';
 import { Sparkles, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { NAV_LINKS } from '../constants';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      const offset = targetElement.getBoundingClientRect().top + window.scrollY - 100; // Adjust offset for fixed header
-      window.scrollTo({ top: offset, behavior: 'smooth' });
+    e.preventDefault(); // Always prevent default for custom handling
+
+    if (href.startsWith('#')) {
+      // This is an in-page anchor link (e.g., #services)
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        const offset = targetElement.getBoundingClientRect().top + window.scrollY - 100; // Adjust offset for fixed header
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      } else {
+        // If the element is not on the current page (e.g., user is on /contact and clicks #services)
+        // Navigate to home page and then scroll
+        navigate('/');
+        // Use a timeout to ensure the main content (with the target ID) is rendered
+        setTimeout(() => {
+          const homeTargetElement = document.querySelector(href);
+          if (homeTargetElement) {
+            const homeOffset = homeTargetElement.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: homeOffset, behavior: 'smooth' });
+          }
+        }, 100); // Small delay to allow page to render
+      }
+    } else if (href.startsWith('/')) {
+      // This is a react-router-dom route link (e.g., /, /contact)
+      navigate(href);
     }
   };
 
@@ -18,7 +40,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Logo and Description */}
           <div className="flex flex-col items-center md:items-start">
-            <a href="#home" className="flex items-center gap-2 text-2xl font-bold text-primary mb-4">
+            <a href="/" onClick={(e) => handleNavLinkClick(e, '/')} className="flex items-center gap-2 text-2xl font-bold text-primary mb-4">
               <Sparkles className="w-7 h-7" />
               Creative-Engine
             </a>
@@ -62,9 +84,9 @@ const Footer: React.FC = () => {
           {/* Contact Info */}
           <div className="md:col-span-1 flex flex-col items-center md:items-start">
             <h4 className="text-xl font-semibold text-white mb-4">Contact Us</h4>
-            <p className="text-textSecondary mb-2">Email: info@creativeengine.com</p>
-            <p className="text-textSecondary mb-2">Phone: +1 (555) 123-4567</p>
-            <p className="text-textSecondary">Address: 123 Creative Way, Digital City, DC 90210</p>
+            <p className="text-textSecondary mb-2">Email: creativexengine@gmail.com</p>
+            <p className="text-textSecondary mb-2">Phone: +91 7066000321</p>
+            <p className="text-textSecondary">Address: Nagpur, Maharashtra, India</p>
           </div>
         </div>
 

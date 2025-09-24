@@ -1,11 +1,11 @@
 import { Camera, Film, Lightbulb, PenTool, Sparkles, TrendingUp } from 'lucide-react';
 
 export const NAV_LINKS = [
-  { name: 'Home', href: '#home' },
-  { name: 'Services', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '#services' }, // Changed from '/#services'
+  { name: 'Portfolio', href: '#portfolio' }, // Changed from '/#portfolio'
+  { name: 'Testimonials', href: '#testimonials' }, // Changed from '/#testimonials'
+  { name: 'Contact', href: '/contact' },
 ];
 
 export const SERVICES = [
@@ -95,27 +95,33 @@ export const PORTFOLIO_ITEMS = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Creative-Engine transformed our social media presence! Their team's ability to craft engaging reels and stunning photos brought our brand to life. We saw a 200% increase in engagement within months!",
-    name: 'Sarah Chen',
-    title: 'Marketing Director, EcoBloom Organics',
-    avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Professional woman
+    quote: "Creative-Engine truly understands the pulse of social media. Their captivating reels and stunning photography elevated our brand's online presence, leading to a significant boost in customer engagement!",
+    name: 'Priya Sharma',
+    title: 'Marketing Head, Aura Lifestyle',
+    avatar: 'https://images.pexels.com/photos/3760303/pexels-photo-3760303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Indian woman
   },
   {
-    quote: "The video documentary they produced for us was beyond our expectations. The scriptwriting was brilliant, and the final product perfectly captured our company's story. Truly exceptional work!",
-    name: 'David Lee',
-    title: 'CEO, InnovateTech Solutions',
-    avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Professional man
+    quote: "The scriptwriting for our product launch video was exceptional. Creative-Engine crafted a narrative that resonated deeply with our audience, resulting in our most successful campaign to date. Highly recommended!",
+    name: 'Rajesh Kumar',
+    title: 'Founder & CEO, TechInnovate Solutions',
+    avatar: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Indian man
   },
   {
-    quote: "Our carousels have never looked better! Creative-Engine's attention to detail and understanding of current social trends is unmatched. They're an invaluable partner for our content strategy.",
-    name: 'Maria Rodriguez',
-    title: 'Brand Manager, Urban Chic Apparel',
-    avatar: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Professional woman
+    quote: "Our social media carousels have never looked this professional and engaging. Creative-Engine's strategic approach to content planning and execution is simply brilliant. They are an indispensable partner!",
+    name: 'Ananya Singh',
+    title: 'Brand Strategist, EthnicThreads Co.',
+    avatar: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Indian woman
   },
   {
-    quote: "From concept to execution, Creative-Engine delivered. Their shorts are incredibly effective, and their team is a pleasure to work with. Highly recommend for any business looking to boost their social game.",
-    name: 'James Wilson',
-    title: 'Founder, FitFusion Gym',
-    avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Professional man
+    quote: "From concept to final delivery, Creative-Engine exceeded our expectations. Their short-form video content is incredibly impactful, driving both awareness and conversions. A fantastic team to collaborate with!",
+    name: 'Vikram Patel',
+    title: 'Director of Digital, GlobalConnect',
+    avatar: 'https://images.pexels.com/photos/1081682/pexels-photo-1081682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Indian man
+  },
+  {
+    quote: "The content planning and analytics provided by Creative-Engine have been a game-changer for us. Their insights helped us refine our strategy and achieve consistent growth across all platforms.",
+    name: 'Sneha Reddy',
+    title: 'Marketing Manager, HealthHub India',
+    avatar: 'https://images.pexels.com/photos/3760303/pexels-photo-3760303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Pexels: Indian woman (reused for variety)
   },
 ];
